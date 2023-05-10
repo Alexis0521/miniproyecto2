@@ -4,6 +4,9 @@
  */
 package Vista;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+
 /**
  *
  * @author orlan
@@ -13,8 +16,12 @@ public class VentanaJuego extends javax.swing.JFrame {
     /**
      * Creates new form VentanaJuego
      */
+    private JLabel[][] casillas;
+    
     public VentanaJuego() {
+        casillas = new JLabel[3][3];
         initComponents();
+        asignarCasillas();
     }
 
     /**
@@ -26,21 +33,146 @@ public class VentanaJuego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        victoriasJ2 = new javax.swing.JLabel();
+        victoriasJ1 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        casilla1 = new javax.swing.JLabel();
+        casilla2 = new javax.swing.JLabel();
+        casilla3 = new javax.swing.JLabel();
+        casilla4 = new javax.swing.JLabel();
+        casilla5 = new javax.swing.JLabel();
+        casilla6 = new javax.swing.JLabel();
+        casilla7 = new javax.swing.JLabel();
+        casilla8 = new javax.swing.JLabel();
+        casilla9 = new javax.swing.JLabel();
+        botonReiniciar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        victoriasJ2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        victoriasJ2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        victoriasJ2.setText("0");
+        victoriasJ2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(victoriasJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, 30, 30));
+
+        victoriasJ1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        victoriasJ1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        victoriasJ1.setText("0");
+        victoriasJ1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(victoriasJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 30, 30));
+
+        jLabel12.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel12.setText("Jugador 2");
+        jLabel12.setOpaque(true);
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 90, 20));
+
+        jLabel11.setBackground(new java.awt.Color(204, 255, 204));
+        jLabel11.setText("Jugador 1");
+        jLabel11.setOpaque(true);
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 90, 20));
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel16.setText("Puntaje");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        casilla1.setBackground(new java.awt.Color(255, 255, 255));
+        casilla1.setOpaque(true);
+
+        casilla2.setOpaque(true);
+
+        casilla3.setOpaque(true);
+
+        casilla4.setOpaque(true);
+
+        casilla5.setOpaque(true);
+
+        casilla6.setOpaque(true);
+
+        casilla7.setOpaque(true);
+
+        casilla8.setOpaque(true);
+
+        casilla9.setOpaque(true);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(casilla7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(casilla8, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(casilla4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(casilla5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(casilla9, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(casilla6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(casilla1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(casilla2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(casilla3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(casilla1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(casilla2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(casilla3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(casilla4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(casilla5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(casilla6, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(casilla7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(casilla8, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(casilla9, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 290, 230));
+
+        botonReiniciar.setBackground(new java.awt.Color(255, 204, 204));
+        botonReiniciar.setText("Volver a Jugar");
+        botonReiniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonReiniciarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonReiniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 140, 30));
+
+        jLabel2.setBackground(new java.awt.Color(153, 255, 255));
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonReiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonReiniciarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonReiniciarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +210,49 @@ public class VentanaJuego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonReiniciar;
+    private javax.swing.JLabel casilla1;
+    private javax.swing.JLabel casilla2;
+    private javax.swing.JLabel casilla3;
+    private javax.swing.JLabel casilla4;
+    private javax.swing.JLabel casilla5;
+    private javax.swing.JLabel casilla6;
+    private javax.swing.JLabel casilla7;
+    private javax.swing.JLabel casilla8;
+    private javax.swing.JLabel casilla9;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel victoriasJ1;
+    private javax.swing.JLabel victoriasJ2;
     // End of variables declaration//GEN-END:variables
-}
+
+    private void asignarCasillas() {
+        casillas[0][0] = casilla1;
+        casillas[0][1] = casilla2;
+        casillas[0][2] = casilla3;
+        casillas[1][0] = casilla4;
+        casillas[1][1] = casilla5;
+        casillas[1][2] = casilla6;
+        casillas[2][0] = casilla7;
+        casillas[2][1] = casilla8;
+        casillas[2][2] = casilla9;
+        
+    }
+    public JLabel[][] getCasillas(){
+        return casillas;
+        }
+    public JLabel getVictoriasJ1(){
+        return victoriasJ1;
+    }
+    public JLabel getVictoriasJ2(){
+        return victoriasJ2;
+    }
+    public JButton getBotonReiniciar(){
+        return botonReiniciar;
+    }
+    
+    };
+
