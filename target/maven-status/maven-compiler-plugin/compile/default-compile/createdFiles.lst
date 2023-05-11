@@ -1,6 +1,8 @@
-com\mycompany\miniproyectodos\MiniproyectoDos.class
-Modelo\Modelo1.class
-Vista\VentanaJuego$2.class
-Vista\VentanaJuego$1.class
-Vista\VentanaJuego.class
-Logica\Logica1.class
+Vista\vista$1.class
+Logica\logica$1.class
+Vista\vista.class
+Modelo\modelo.class
+Logica\logica.class
+Vista\vista$2.class
+Logica\logica$2.class
+main\main.class

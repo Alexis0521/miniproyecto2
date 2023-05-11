@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Vista;
 
 import javax.swing.JButton;
@@ -11,14 +8,14 @@ import javax.swing.JLabel;
  *
  * @author orlan
  */
-public class VentanaJuego extends javax.swing.JFrame {
+public class vista extends javax.swing.JFrame {
 
     /**
      * Creates new form VentanaJuego
      */
-    private JLabel[][] casillas;
+    private final JLabel[][] casillas;
     
-    public VentanaJuego() {
+    public vista() {
         casillas = new JLabel[3][3];
         initComponents();
         asignarCasillas();
@@ -84,22 +81,31 @@ public class VentanaJuego extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
         casilla1.setBackground(new java.awt.Color(255, 255, 255));
+        casilla1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         casilla1.setOpaque(true);
 
+        casilla2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         casilla2.setOpaque(true);
 
+        casilla3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         casilla3.setOpaque(true);
 
+        casilla4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         casilla4.setOpaque(true);
 
+        casilla5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         casilla5.setOpaque(true);
 
+        casilla6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         casilla6.setOpaque(true);
 
+        casilla7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         casilla7.setOpaque(true);
 
+        casilla8.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         casilla8.setOpaque(true);
 
+        casilla9.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         casilla9.setOpaque(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -191,20 +197,24 @@ public class VentanaJuego extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaJuego.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new VentanaJuego().setVisible(true);
+                new vista().setVisible(true);
             }
         });
     }
@@ -253,6 +263,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     public JButton getBotonReiniciar(){
         return botonReiniciar;
     }
+
     
     };
 
