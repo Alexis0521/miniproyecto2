@@ -7,172 +7,148 @@
  */
 
 package Modelo;
+/**
 
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-
+ */
 public class modelo {
 
-    private String turno;
-    private boolean end;
-    private boolean draw;
-    private JLabel cuadroj1;
-    private JLabel cuadroj2;
-    private String[][] tablero;
-    private int cantMovidas;
-    private int victoriasJ1;
-    private int victoriasJ2;
-
-    public modelo() {
-        turno = "X";
-        end = false;
-        draw = false;
-        tablero = new String[3][3];
-        cantMovidas = 0;
-        victoriasJ1 = 0;
-        victoriasJ2 = 0;
-    }
-
-    public void marcarCasilla(int i, int j, JLabel[][] casillas) {
-        if (!end) {
-            if (tablero[i][j] == null) {
-                tablero[i][j] = turno;
-                casillas[i][j].setText(turno);
-                cantMovidas++;
-                verificarEstado();
-                if (!end) {
-                    if (turno.equals("X")) {
-                        turno = "0";
-                    } else {
-                        turno = "X";
-                    }
-                }else{
-                    terminarJuego();
-                }
-            }
-        }
-    }
-
-    private void verificarEstado() {
-        verificarFilas();
-        if (!end) {
-            verificarColumnas();
-            if (!end) {
-                verificarDiagonalP();
-                if (!end) {
-                    verificarDiagonalS();
-                    if (!end) {
-                        if (cantMovidas == 9) {
-                            draw = true;
-                            end = true;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    private void verificarFilas() {
-        for (int i = 0; i < 3 && !end; i++) {
-            boolean win = true;
-            for (int j = 0; j < 3 && win; j++) {
-                if (tablero[i][j] == null || !tablero[i][j].equals("turno")) {
-                    win = false;
-                }
-
-            }
-            if (win) {
-                end = true;
-            }
-        }
-    }
-
-    private void verificarColumnas() {
-        for (int j = 0; j < 3 && !end; j++) {
-            boolean win = true;
-            for (int i = 0; i < 3 && win; i++) {
-                if (tablero[i][j] == null || !tablero[i][j].equals("turno")) {
-                    win = false;
-                }
-
-            }
-            if (win) {
-                end = true;
-            }
-        }
-    }
-
-    private void verificarDiagonalP() {
-
-        boolean win = true;
-        for (int i = 0; i < 3 && win; i++) {
-            if (tablero[i][i] == null || !tablero[i][i].equals("turno")) {
-                win = false;
-            }
-
-        }
-        if (win) {
-            end = true;
-        }
-
-    }
-
-    private void verificarDiagonalS() {
-
-        boolean win = true;
-        int j = 2;
-        for (int i = 0; i < 3 && win; i++, j--) {
-            if (tablero[i][j] == null || !tablero[i][j].equals("turno")) {
-                win = false;
-            }
-
-        }
-        if (win) {
-            end = true;
-        }
-    }
-
-    private void terminarJuego() {
-        if(draw){
-            JOptionPane.showMessageDialog(null, "Empate");
-        }else{
-            if(turno.equals("X")){
-                victoriasJ1++;
-                cuadroj1.setText(String.valueOf(victoriasJ1));
-                JOptionPane.showMessageDialog(null, "Victoria del jugador 1");
-            }else{
-                victoriasJ1++;
-                cuadroj1.setText(String.valueOf(victoriasJ1));
-                JOptionPane.showMessageDialog(null, "Victoria jugador 2");
-            }
-        }
-    }
-
+    private byte turno = 1;
+    private String marca_X = "X";
+    private String marca_O = "O";
+    private boolean error=false;
+    private byte ganador_es=0;
+    private String tablero[][] ={{"","",""},
+                                 {"","",""},
+                                 {"","",""}
+                                };
+    private int victoriasJ1 = 0;
+    private int victoriasJ2 = 0;
     
-    public void setJugadores(JLabel j1, JLabel j2) {
-        cuadroj1 = j1;
-        cuadroj2 = j2;
-        
-        
+    public modelo(){}
+
+
+    public void Jugar_otra_vez()
+    {
+        for ( int i = 0 ; i < tablero.length ; i++ )
+            for ( int j = 0 ; j < tablero.length ; j++)
+                tablero[i][j]="";
+        this.error=false;
+        this.ganador_es=0;
+        this.turno=1;
+
+    }
+  
+    public String set_movimiento(int posicion)
+    {
+        String out="";
+        if(turno==1)
+        {
+            out = marcar(posicion , this.marca_X);
+            //si no se pudo marcar => continua con su turno
+            turno = 2;
+            if ( gano(this.tablero, this.marca_X) )
+                this.ganador_es=1;
+            else if ( empate() )
+                this.ganador_es=3;
+        }
+        else
+        {
+            out =  marcar(posicion , this.marca_O);
+            turno = 1;
+            if ( gano(this.tablero, this.marca_O) )
+                this.ganador_es=2;
+            else if ( empate() )
+                this.ganador_es=3;
+        }     
+        return out;
+    }
+    private String marcar(int Posicion, String value)
+    {        
+       String marca="";
+       switch (Posicion)
+       {
+           case 1:marca = sub_marcar(0,0,value); break;
+           case 2:marca = sub_marcar(0,1,value); break;
+           case 3:marca = sub_marcar(0,2,value); break;
+           case 4:marca = sub_marcar(1,0,value); break;
+           case 5:marca = sub_marcar(1,1,value); break;
+           case 6:marca = sub_marcar(1,2,value); break;
+           case 7:marca = sub_marcar(2,0,value); break;
+           case 8:marca = sub_marcar(2,1,value); break;
+           case 9:marca = sub_marcar(2,2,value); break;
+       }
+       return marca;
+    }
+
+    private String sub_marcar(int x, int y, String value)
+    {
+        String marca="";
+        this.error=false;
+        if( this.tablero[x][y].equals("") )
+        {
+            this.tablero[x][y] = value;
+            marca = value;
+        }        
+        else
+        {
+            marca = this.tablero[x][y];
+            this.error=true;
+        }
+        return marca;
+    }
+
+    public boolean get_error()
+    {
+        return this.error;
+    }
+
+    public String get_turno()
+    {
+        return (this.turno==1)? "Turno: jugador 1":"Turno: jugador 2";
+    }
+
+    public byte ganador()
+    {
+        return this.ganador_es;
+    }
+
+    public boolean gano( String matriz[][], String marca )
+    {
+
+        for ( int i = 0 ; i < matriz.length ; i++ )
+        {
+            byte count=0;
+            for ( int j = 0 ; j < matriz.length ; j++)
+                count+=( matriz[i][j].equals(marca) )?1:0;
+            if( count == 3)
+                 return true;
+        }
+ 
+        for ( int j = 0 ; j < matriz.length ; j++ )
+        {
+            byte count=0;
+            for ( int i = 0 ; i < matriz.length ; i++)
+                count+=( matriz[i][j].equals(marca) )?1:0;
+            if( count == 3)
+                 return true;
+        }
+  
+        if(  matriz[0][0].equals(marca) && matriz[1][1].equals(marca) && matriz[2][2].equals(marca) )
+            return true;
+
+        if(  matriz[0][2].equals(marca) && matriz[1][1].equals(marca) && matriz[2][0].equals(marca) )
+            return true;
+
+        return false;
     }
     
-    public void reiniciarJuego(JLabel[][] casillas) {
-        turno = "X";
-        end = false;
-        draw = false;
-        cantMovidas = 0;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                tablero[i][j] = null;
-                casillas[i][j].setText("");
-            }
-              
-        }
-     
-        
+    private boolean empate()
+    {
+        for ( int i = 0 ; i < tablero.length ; i++ )
+           for ( int j = 0 ; j < tablero.length ; j++)
+                if( tablero[i][j].equals(""))
+                    return false;
+        return true;
     }
 
-    
 }
-
