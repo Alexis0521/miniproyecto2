@@ -1,24 +1,25 @@
+/*
+ * MINIPROYECTO #2
+ *
+ * INTEGRANTES: 
+ * Orlando Alexis Rengifo Mejia(2223878)
+ * PROFESOR: Luis Yohany Romo Portilla 
+ */
+
 package main;
 
+import Vista.vista;
 import Logica.logica;
 import Modelo.modelo;
-import Vista.vista;
 
-/**
- *
- * @author orlan
- */
 public class main {
-    
 
-    public static void main(String args[]) {
-        
+    public static void main(String[] args) {
         modelo modelo = new modelo();
         vista vista = new vista();
-        logica logica = new logica(vista, modelo);
-        vista.setLocationRelativeTo(null);
+        logica controlador = new logica( vista , modelo );
+        controlador.iniciar_vista();
         vista.setVisible(true);
-
     }
 
 }

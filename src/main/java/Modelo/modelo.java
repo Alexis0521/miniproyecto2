@@ -1,12 +1,17 @@
+/*
+ * MINIPROYECTO #2
+ *
+ * INTEGRANTES: 
+ * Orlando Alexis Rengifo Mejia(2223878)
+ * PROFESOR: Luis Yohany Romo Portilla 
+ */
+
 package Modelo;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author orlan
- */
+
 public class modelo {
 
     private String turno;
